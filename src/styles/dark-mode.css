@@ -81,6 +81,21 @@
     --highlight-gradient: linear-gradient(135deg, #C4B5FD 0%, #A78BFA 50%, #DBEAFE 100%);
 }
 
+/* ⚠️ research·vibe·academic 컬러셋도 html[data-color](0,1,1)의 라이트 배경값이
+   [data-theme=dark](0,1,0)를 이기므로, 다크 배경/표면 변수를 (0,2,0)으로 못박는다 */
+[data-theme="dark"][data-color="research"],
+[data-theme="dark"][data-color="vibe"],
+[data-theme="dark"][data-color="academic"] {
+    --bg-white: #0E1422;
+    --bg-light-gray: #161D2E;
+    --bg-medium-gray: #20293D;
+    --border-light: #2A3450;
+    --border-medium: #3C496A;
+    --card-bg: #161D2E;
+    --border-color: #2A3450;
+    --bg-alt: #11182A;
+}
+
 [data-theme="dark"] .particle {
     background: rgba(95, 176, 236, 0.22);
 }
@@ -765,8 +780,11 @@
 }
 
 [data-theme="dark"] .stat-label {
-    color: #A0A6B0;
+    color: rgba(255, 255, 255, 0.82);
 }
+/* stats 섹션은 네이비 배경 — 숫자/라벨 모두 밝게 통일 */
+[data-theme="dark"] .stats-section .stat-value { color: #fff; }
+[data-theme="dark"] .stats-section .stat-label { color: rgba(255, 255, 255, 0.82); }
 
 [data-theme="dark"] .admin-table-wrapper {
     background: #1A1F2E;
