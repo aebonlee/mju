@@ -1294,3 +1294,17 @@
     background: rgba(143, 172, 230, 0.14);
     color: var(--primary-blue-light);
 }
+
+/* ── 프롬프트 실습/평가(practice) 스텝 네비 다크 보정 ──
+   .practice-step.active 가 라이트 그린 배경(하드코딩)+변수 텍스트라
+   다크모드에서 밝은 글자가 밝은 배경에 묻히는 문제 해소 */
+[data-theme="dark"] .practice-step.active {
+    background: rgba(143, 172, 230, 0.16);
+    border-left-color: var(--accent);
+}
+[data-theme="dark"] .practice-step.completed { color: var(--primary-blue-light); }
+[data-theme="dark"] .practice-step.active .practice-step-icon,
+[data-theme="dark"] .practice-step.completed .practice-step-icon {
+    background: rgba(143, 172, 230, 0.22);
+    color: var(--primary-blue-light);
+}

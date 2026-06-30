@@ -32,7 +32,7 @@
     width: 4px;
 }
 .guide-sidebar::-webkit-scrollbar-thumb {
-    background: #C8E6C9;
+    background: var(--border-medium);
     border-radius: 4px;
 }
 .guide-sidebar-title {
@@ -68,14 +68,14 @@
     font-family: inherit;
 }
 .guide-nav-link:hover {
-    background: #E8F5E9;
+    background: var(--bg-medium-gray);
     color: var(--primary-blue);
 }
 .guide-nav-link.active {
-    background: #E8F5E9;
+    background: var(--bg-medium-gray);
     color: var(--primary-blue);
     font-weight: 600;
-    border-left: 3px solid #4CAF50;
+    border-left: 3px solid var(--accent);
 }
 
 /* ── Sidebar Groups (collapsible accordion) ── */
@@ -93,7 +93,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #2E7D32;
+    color: var(--primary-blue);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -125,7 +125,7 @@
 .guide-sidebar-footer {
     margin-top: 16px;
     padding: 16px 20px 0;
-    border-top: 1px solid #C8E6C9;
+    border-top: 1px solid var(--border-medium);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -163,34 +163,34 @@
     margin-top: 2px;
 }
 .guide-sidebar-cta.workshop {
-    background: #E8F5E9;
-    border-color: #C8E6C9;
+    background: var(--bg-medium-gray);
+    border-color: var(--border-medium);
     color: var(--text-primary);
 }
 .guide-sidebar-cta.workshop i {
-    color: #2E7D32;
+    color: var(--primary-blue);
 }
 .guide-sidebar-cta.workshop span {
     color: var(--text-light);
 }
 .guide-sidebar-cta.workshop:hover {
-    background: #C8E6C9;
-    border-color: #4CAF50;
+    background: var(--border-medium);
+    border-color: var(--accent);
 }
 .guide-sidebar-cta.practice {
-    background: #E8F5E9;
-    border-color: #C8E6C9;
+    background: var(--bg-medium-gray);
+    border-color: var(--border-medium);
     color: var(--text-primary);
 }
 .guide-sidebar-cta.practice i {
-    color: #1B5E20;
+    color: var(--primary-blue);
 }
 .guide-sidebar-cta.practice span {
     color: var(--text-light);
 }
 .guide-sidebar-cta.practice:hover {
-    background: #C8E6C9;
-    border-color: #4CAF50;
+    background: var(--border-medium);
+    border-color: var(--accent);
 }
 
 /* ── Content Area (matches learning-content) ── */
@@ -208,7 +208,7 @@
     color: var(--primary-blue);
     margin-bottom: 12px;
     padding-bottom: 12px;
-    border-bottom: 3px solid #81C784;
+    border-bottom: 3px solid #9DBDF0;
 }
 .guide-content-header p {
     font-size: 15px;
@@ -226,7 +226,7 @@
     color: var(--primary-blue);
     margin-bottom: 12px;
     padding-left: 12px;
-    border-left: 4px solid #4CAF50;
+    border-left: 4px solid var(--accent);
 }
 .guide-section h3 {
     font-size: 15px;
@@ -234,7 +234,7 @@
     color: var(--primary-blue);
     margin-top: 24px;
     margin-bottom: 10px;
-    background: linear-gradient(to right, #E8F5E9, transparent);
+    background: linear-gradient(to right, var(--bg-medium-gray), transparent);
     padding: 4px 10px;
     border-radius: 4px;
 }
@@ -261,7 +261,7 @@
     overflow-x: auto;
     margin: 12px 0 20px;
     border-radius: var(--radius-md);
-    border: 1px solid #C8E6C9;
+    border: 1px solid var(--border-medium);
 }
 .guide-section .table-responsive table {
     width: 100%;
@@ -270,24 +270,24 @@
     min-width: 400px;
 }
 .guide-section .table-responsive th {
-    background: #E8F5E9;
+    background: var(--bg-medium-gray);
     font-weight: 600;
-    color: #1B5E20;
+    color: var(--primary-blue);
     text-align: left;
     padding: 10px 14px;
-    border-bottom: 2px solid #C8E6C9;
+    border-bottom: 2px solid var(--border-medium);
 }
 .guide-section .table-responsive td {
     padding: 8px 14px;
     color: var(--text-secondary);
-    border-bottom: 1px solid #C8E6C9;
+    border-bottom: 1px solid var(--border-medium);
     line-height: 1.6;
 }
 .guide-section .table-responsive tr:last-child td {
     border-bottom: none;
 }
 .guide-section .table-responsive tr:hover td {
-    background: #F1F8E9;
+    background: var(--bg-light-gray);
 }
 
 /* ── Markdown Body (overridden by site.css) ── */
@@ -298,7 +298,7 @@
     justify-content: space-between;
     margin-top: 48px;
     padding-top: 24px;
-    border-top: 1px solid #C8E6C9;
+    border-top: 1px solid var(--border-medium);
 }
 .guide-section-nav button {
     display: flex;
@@ -308,8 +308,8 @@
     font-size: 13px;
     font-weight: 600;
     color: var(--primary-blue);
-    background: #E8F5E9;
-    border: 1px solid #C8E6C9;
+    background: var(--bg-medium-gray);
+    border: 1px solid var(--border-medium);
     border-radius: var(--radius-sm);
     cursor: pointer;
     transition: var(--transition-base);
@@ -327,18 +327,18 @@
 
 /* ── Inline Code / Code Block (green theme) ── */
 .inline-code {
-    background: #E8F5E9;
+    background: var(--bg-medium-gray);
     padding: 2px 6px;
     border-radius: 4px;
     font-family: 'Fira Code', 'Consolas', monospace;
     font-size: 13px;
-    color: #1B5E20;
-    border: 1px solid #C8E6C9;
+    color: var(--primary-blue);
+    border: 1px solid var(--border-medium);
 }
 .code-block-wrapper {
     margin: 16px 0;
     border-radius: var(--radius-md);
-    border: 1px solid #2E7D32;
+    border: 1px solid var(--primary-blue);
     overflow: hidden;
 }
 .code-block-header {
@@ -346,13 +346,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 16px;
-    background: #1B3A1E;
-    border-bottom: 1px solid #2E7D32;
+    background: #16203F;
+    border-bottom: 1px solid var(--primary-blue);
 }
 .code-block-lang {
     font-size: 12px;
     font-weight: 600;
-    color: #81C784;
+    color: #9DBDF0;
     text-transform: uppercase;
 }
 .code-copy-btn {
@@ -361,24 +361,24 @@
     gap: 4px;
     padding: 4px 10px;
     font-size: 12px;
-    color: #A5D6A7;
+    color: #B8CDEE;
     background: transparent;
-    border: 1px solid #2E7D32;
+    border: 1px solid var(--primary-blue);
     border-radius: 4px;
     cursor: pointer;
     transition: var(--transition-base);
     font-family: inherit;
 }
 .code-copy-btn:hover {
-    color: #C8E6C9;
-    border-color: #4CAF50;
+    color: #DCE7FA;
+    border-color: var(--accent);
 }
 .code-copy-btn.copied {
-    color: #81C784;
-    border-color: #4CAF50;
+    color: #9DBDF0;
+    border-color: var(--accent);
 }
 .code-block-content {
-    background: #1B3A1E;
+    background: #16203F;
     padding: 16px 20px;
     overflow-x: auto;
 }
@@ -386,7 +386,7 @@
     margin: 0;
 }
 .code-block-content code {
-    color: #A5D6A7;
+    color: #B8CDEE;
     font-family: 'Fira Code', 'Consolas', monospace;
     font-size: 13px;
     line-height: 1.7;
@@ -396,12 +396,12 @@
     border: none;
 }
 .code-block-content .token.comment { color: #6B8E6F; font-style: italic; }
-.code-block-content .token.string { color: #81C784; }
+.code-block-content .token.string { color: #9DBDF0; }
 .code-block-content .token.keyword { color: #80CBC4; font-weight: 600; }
 .code-block-content .token.builtin { color: #FFD54F; }
 .code-block-content .token.function { color: #CE93D8; }
 .code-block-content .token.number { color: #EF9A9A; }
-.code-block-content .token.operator { color: #C8E6C9; }
+.code-block-content .token.operator { color: var(--border-medium); }
 .code-block-content .token.decorator { color: #FFAB91; }
 .code-block-content .code-line-highlight { background: rgba(76,175,80,0.15); display: block; }
 
@@ -415,7 +415,7 @@
     border-left: 4px solid;
     font-size: 14px;
 }
-.tip-box.tip { background: #E8F5E9; border-color: #4CAF50; }
+.tip-box.tip { background: var(--bg-medium-gray); border-color: var(--accent); }
 .tip-box.warning { background: #FFF8E1; border-color: #FF8F00; }
 .tip-box.important { background: #E3F2FD; border-color: #1976D2; }
 .tip-box.danger { background: #FFEBEE; border-color: #D32F2F; }
@@ -424,7 +424,7 @@
     flex-shrink: 0;
     margin-top: 2px;
 }
-.tip-box.tip .tip-box-icon { color: #2E7D32; }
+.tip-box.tip .tip-box-icon { color: var(--primary-blue); }
 .tip-box.warning .tip-box-icon { color: #FF8F00; }
 .tip-box.important .tip-box-icon { color: #1976D2; }
 .tip-box.danger .tip-box-icon { color: #D32F2F; }
@@ -449,15 +449,15 @@
     gap: 24px;
     padding: 20px 24px;
     margin-bottom: 16px;
-    background: #E8F5E9;
-    border: 1px solid #C8E6C9;
-    border-left: 4px solid #4CAF50;
+    background: var(--bg-medium-gray);
+    border: 1px solid var(--border-medium);
+    border-left: 4px solid var(--accent);
     border-radius: var(--radius-md);
 }
 .prompt-practice-cta-text h3 {
     font-size: 16px;
     font-weight: 700;
-    color: #1B5E20;
+    color: var(--primary-blue);
     margin-bottom: 4px;
 }
 .prompt-practice-cta-text p {
@@ -494,7 +494,7 @@
 }
 .tool-guide-card {
     background: var(--bg-white);
-    border: 1px solid #C8E6C9;
+    border: 1px solid var(--border-medium);
     border-radius: var(--radius-lg);
     padding: 32px 24px;
     text-align: center;
@@ -503,7 +503,7 @@
 .tool-guide-card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-4px);
-    border-color: #4CAF50;
+    border-color: var(--accent);
 }
 .tool-guide-icon {
     font-size: 36px;
@@ -535,7 +535,7 @@
 }
 .tool-tip-card {
     background: var(--bg-white);
-    border: 1px solid #C8E6C9;
+    border: 1px solid var(--border-medium);
     border-radius: var(--radius-lg);
     overflow: hidden;
     transition: var(--transition-base);
@@ -549,7 +549,7 @@
     align-items: center;
     gap: 12px;
     padding: 20px 24px 16px;
-    border-bottom: 1px solid #E8F5E9;
+    border-bottom: 1px solid var(--bg-medium-gray);
 }
 .tool-tip-header h3 {
     font-size: 16px;
@@ -561,8 +561,8 @@
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    background: #E8F5E9;
-    color: #2E7D32;
+    background: var(--bg-medium-gray);
+    color: var(--primary-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -587,7 +587,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #F1F8E9;
+    border-bottom: 1px solid var(--bg-light-gray);
 }
 .tool-tip-row:last-child {
     border-bottom: none;
@@ -600,15 +600,15 @@
 .tool-tip-value {
     font-size: 13px;
     font-weight: 600;
-    color: #1B5E20;
-    background: #E8F5E9;
+    color: var(--primary-blue);
+    background: var(--bg-medium-gray);
     padding: 3px 10px;
     border-radius: 20px;
 }
 .tool-tip-value small {
     font-size: 11px;
     font-weight: 400;
-    color: #4CAF50;
+    color: var(--accent);
 }
 
 /* Warning card */
@@ -643,7 +643,7 @@
     color: #D32F2F;
 }
 .tool-tip-list li i.fa-check {
-    color: #2E7D32;
+    color: var(--primary-blue);
 }
 .tool-tip-list li i.fa-user {
     color: #1565C0;
@@ -674,7 +674,7 @@
     transition: var(--transition-base);
 }
 .tool-tip-step:hover {
-    background: #E8F5E9;
+    background: var(--bg-medium-gray);
 }
 .step-num {
     width: 28px;
@@ -699,7 +699,7 @@
 
 /* ── Instructor Profile Hero ── */
 .instructor-hero {
-    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);
+    background: linear-gradient(135deg, var(--bg-medium-gray) 0%, var(--border-medium) 50%, #B8CDEE 100%);
     border-radius: var(--radius-lg);
     padding: 40px;
     margin-bottom: 32px;
@@ -733,7 +733,7 @@
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #2E7D32;
+    color: var(--primary-blue);
     background: rgba(255,255,255,0.7);
     padding: 4px 16px;
     border-radius: 20px;
@@ -756,7 +756,7 @@
 .instructor-hero-name {
     font-size: 32px;
     font-weight: 800;
-    color: #1B5E20;
+    color: var(--primary-blue);
     margin-bottom: 6px;
     position: relative;
     z-index: 1;
@@ -764,7 +764,7 @@
 .instructor-hero-title {
     font-size: 15px;
     font-weight: 600;
-    color: #2E7D32;
+    color: var(--primary-blue);
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
@@ -774,14 +774,14 @@
     margin: 0 auto 28px;
     font-size: 14px;
     line-height: 1.8;
-    color: #33691E;
+    color: var(--primary-blue);
     font-style: italic;
     position: relative;
     z-index: 1;
     background: rgba(255,255,255,0.5);
     padding: 14px 20px;
     border-radius: var(--radius-md);
-    border-left: 4px solid #4CAF50;
+    border-left: 4px solid var(--accent);
     text-align: left;
 }
 .instructor-hero-stats {
@@ -810,7 +810,7 @@
 .instructor-stat-label {
     font-size: 12px;
     font-weight: 600;
-    color: #2E7D32;
+    color: var(--primary-blue);
 }
 .instructor-hero-initials {
     width: 140px;
@@ -885,7 +885,7 @@
     color: var(--text-primary);
     margin-bottom: 16px;
     padding-bottom: 8px;
-    border-bottom: 2px solid #4CAF50;
+    border-bottom: 2px solid var(--accent);
 }
 .about-section p {
     font-size: 15px;
