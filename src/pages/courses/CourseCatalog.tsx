@@ -18,10 +18,10 @@ export default function CourseCatalog(): ReactElement {
       <section className="page-header">
         <div className="container">
           <div className="eyebrow">Programs</div>
-          <h1>{language === 'ko' ? '교육과정' : 'Courses'}</h1>
+          <h1>{language === 'ko' ? '연수과정' : 'Courses'}</h1>
           <p>{language === 'ko'
-            ? '생성형 AI로 배우는 4개 과정 · 각 2일 16시간 · 실습 중심'
-            : 'Four programs powered by multi-LLM(ChatGPT·Claude·Gemini) — 2 days / 16 hours each, hands-on.'}</p>
+            ? '기초·심화·전문 3과정 · 각 5차시 이내 · 마이크로러닝'
+            : 'Three staged courses · up to 5 microlearning sessions each (ADDIE · TPACK · Bloom).'}</p>
         </div>
       </section>
 

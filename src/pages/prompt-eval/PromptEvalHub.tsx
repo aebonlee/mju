@@ -51,12 +51,12 @@ export default function PromptEvalHub() {
                 {isKo ? '작성 평가 시작' : 'Start Workshop'}
               </Link>
             </div>
-            <div className="prompt-practice-cta" style={{ background: 'linear-gradient(135deg, rgba(56,161,105,0.08), rgba(56,161,105,0.02))', borderColor: 'rgba(56,161,105,0.2)' }}>
+            <div className="prompt-practice-cta" style={{ background: 'rgba(56,161,105,0.12)', borderColor: 'rgba(56,161,105,0.32)' }}>
               <div className="prompt-practice-cta-text">
                 <h3>{isKo ? '종합 실습 테스트' : 'Full Practice Test'}</h3>
                 <p>{isKo ? '선택형 퀴즈 + 프롬프트 평가 + 직접 작성까지, 250점 만점 종합 실습을 진행하세요.' : 'Take a 250-point practice: quiz + evaluation + writing exercises.'}</p>
               </div>
-              <Link to="/prompt-eval/practice" className="prompt-practice-cta-btn" style={{ background: '#38a169' }}>
+              <Link to="/prompt-eval/practice" className="prompt-practice-cta-btn" style={{ background: '#2f855a' }}>
                 <i className="fa-solid fa-clipboard-check" />
                 {isKo ? '종합 실습 시작' : 'Start Practice'}
               </Link>

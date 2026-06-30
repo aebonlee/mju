@@ -22,14 +22,13 @@ export default {
 | **지시(Instruction)** | 수행할 구체적 작업 | "프로젝트 일정표를 작성해주세요" |
 | **출력형식(Format)** | 원하는 응답 형태 | "표 형식으로, 주차별로 구분하여" |
 
-### Copilot에서의 프롬프트 유형
+### 주요 생성형 AI 비교
 
-| 유형 | 사용 환경 | 특징 |
-|------|----------|------|
-| 코드 프롬프트 | GitHub Copilot (IDE) | 주석, 함수명으로 코드 생성 유도 |
-| 채팅 프롬프트 | Copilot Chat | 자연어 대화로 질문/요청 |
-| 업무 프롬프트 | M365 Copilot | Word, Excel 등에서 문서 작업 지시 |
-| 자동화 프롬프트 | Power Platform | 워크플로우/앱 생성 지시 |
+| 도구 | 강점 | 수업 활용 예 |
+|------|------|------|
+| ChatGPT | 범용성·플러그인·이미지 생성 | 강의안·퀴즈·토론문항 생성 |
+| Claude | 긴 문서 처리·정교한 글쓰기 | 강의자료 요약·평가 루브릭 설계 |
+| Gemini | 구글 연동·실시간 검색 | 자료조사·최신 사례 수집 |
 
 > 좋은 프롬프트의 핵심은 **구체성**, **명확성**, **맥락 제공** 세 가지입니다.`,
       contentEn: `The input text you provide to an AI model to get desired results is called a **Prompt**.
@@ -47,14 +46,13 @@ A prompt is not just a simple question — it's a **communication interface** wi
 | **Instruction** | Specific task to perform | "Create a project schedule" |
 | **Format** | Desired response format | "In table format, organized by week" |
 
-### Prompt Types in Copilot
+### Comparing Major Generative AI
 
-| Type | Environment | Characteristics |
-|------|-------------|-----------------|
-| Code Prompts | GitHub Copilot (IDE) | Guide code generation via comments, function names |
-| Chat Prompts | Copilot Chat | Natural language Q&A |
-| Work Prompts | M365 Copilot | Document tasks in Word, Excel, etc. |
-| Automation Prompts | Power Platform | Workflow/app creation instructions |
+| Tool | Strengths | Teaching Use |
+|------|-----------|--------------|
+| ChatGPT | Versatile, plugins, image generation | Lesson plans, quizzes, discussion prompts |
+| Claude | Long documents, refined writing | Material summaries, rubric design |
+| Gemini | Google integration, real-time search | Research, latest case collection |
 
 > The keys to good prompts are **specificity**, **clarity**, and **context**.`,
     },

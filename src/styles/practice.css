@@ -325,7 +325,7 @@
 }
 .write-scenario {
   padding: 16px 20px;
-  background: linear-gradient(135deg, #F1F8E9, transparent);
+  background: var(--accent-soft);
   border-left: 3px solid var(--primary-blue);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   margin-bottom: 16px;
@@ -1013,8 +1013,8 @@
 .prompt-practice-cta {
   margin: 32px 0;
   padding: 28px 32px;
-  background: linear-gradient(135deg, #E8F5E9, rgba(128,90,213,0.08));
-  border: 1px solid #C8E6C9;
+  background: var(--accent-soft);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1049,7 +1049,7 @@
   transition: var(--transition-base);
 }
 .prompt-practice-cta-btn:hover {
-  background: #1B5E20;
+  background: var(--primary-blue-dark);
 }
 
 /* ============================================

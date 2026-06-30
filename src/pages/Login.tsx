@@ -4,6 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useAuth } from '../contexts/AuthContext';
 import { signInWithGoogle, signInWithKakao, signInWithEmail } from '../utils/auth';
 import SEOHead from '../components/SEOHead';
+import site from '../config/site';
 import '../styles/auth.css';
 
 type LoginStep = 'method' | 'email';
@@ -69,9 +70,9 @@ const Login = (): ReactElement | null => {
       <div className="auth-center-wrapper">
         <div className="auth-card-google">
           <div className="auth-logo-area">
-            <span className="brand-dream">Dream</span>
-            <span className="brand-it">IT</span>{' '}
-            <span className="brand-biz">Biz</span>
+            {site.brand.parts.map((part, i) => (
+              <span key={i} className={part.className}>{part.text}</span>
+            ))}
           </div>
           <h2 className="auth-heading">{t('auth.loginTitle')}</h2>
           <p className="auth-sub">{t('auth.loginSubtitle')}</p>
