@@ -37,7 +37,7 @@
     --shadow-xl: 0 20px 40px rgba(26, 42, 94, 0.12), 0 8px 16px rgba(26, 42, 94, 0.07);
     --nav-height: 80px;
     --section-padding: 80px;
-    --container-max: 1480px;
+    --container-max: 1280px;
 
     /* Heading font — serif for academic gravitas */
     --font-heading: 'Noto Serif KR', 'Noto Sans KR', serif;
@@ -222,10 +222,10 @@ h4 { line-height: 1.45; letter-spacing: -0.01em; }
     box-shadow: 0 8px 24px rgba(0, 70, 200, 0.3);
 }
 
-/* Gold accent button (academic signature) */
+/* Accent button (Myongji Blue) — 파랑 배경엔 흰 글자 */
 .btn-accent {
     background: var(--accent);
-    color: #1B2230;
+    color: #ffffff;
     border-color: var(--accent);
     font-weight: 700;
 }
