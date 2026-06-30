@@ -80,9 +80,9 @@
   flex-wrap: wrap;
 }
 
-/* Hero side panel (dark navy) */
+/* Hero side panel — 그라데이션 없이 단색 명지대 다크 블루(라이트/다크 동일) */
 .hero-ed-side {
-  background: var(--hero-bg);
+  background: #1A2A5E;
   color: #fff;
   padding: 30px;
   border-radius: var(--radius-lg);
