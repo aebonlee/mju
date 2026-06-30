@@ -1302,11 +1302,6 @@
     background: var(--bg-light-gray);
     border-color: var(--border-light);
 }
-/* hero-ed-card / overview-card 는 네이비 배경 + 흰 텍스트가 원래 디자인 */
-[data-theme="dark"] .hero-ed-card {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.12);
-}
 /* 밝은 그라데이션(primary-gradient)을 쓰는 섹션은 다크에서 네이비로 — 흰 글자 가독성 확보 */
 [data-theme="dark"] .stats-section,
 [data-theme="dark"] .dash-welcome {
