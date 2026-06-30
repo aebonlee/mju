@@ -79,9 +79,14 @@ const Navbar = (): ReactElement => {
           <div className="logo">
             <Link to="/" className="nav-logo-link" aria-label={site.nameKo}>
               <img
-                src="/images/logo/logo-horizontal-ko.jpg"
+                src="/images/logo/logo-horizontal-ko.png"
                 alt="명지대학교"
-                className="nav-logo-img"
+                className="nav-logo-img nav-logo-light"
+              />
+              <img
+                src="/images/logo/logo-horizontal-ko-white.png"
+                alt="명지대학교"
+                className="nav-logo-img nav-logo-dark"
               />
               <span className="nav-logo-divider" aria-hidden="true" />
               <span className="nav-logo-tag">교수자 AI<br />역량강화</span>

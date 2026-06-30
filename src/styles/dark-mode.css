@@ -4,25 +4,25 @@
    ============================================ */
 
 [data-theme="dark"] {
-    --bg-white: #0F1419;
-    --bg-light-gray: #161B24;
-    --bg-medium-gray: #222838;
-    --text-primary: #ECE7DC;
-    --text-secondary: #AEB4BE;
-    --text-light: #99A0AB;
-    --border-light: #2A3142;
-    --border-medium: #3A4253;
-    --glass-bg: rgba(15, 20, 25, 0.85);
+    --bg-white: #0E1422;
+    --bg-light-gray: #161D2E;
+    --bg-medium-gray: #20293D;
+    --text-primary: #EEF2F9;
+    --text-secondary: #BBC5D6;
+    --text-light: #93A0B5;
+    --border-light: #2A3450;
+    --border-medium: #3C496A;
+    --glass-bg: rgba(14, 20, 34, 0.85);
     --glass-border: rgba(255, 255, 255, 0.08);
-    /* Brighter Myongji blue for dark backgrounds */
-    --primary-blue: #6E8BC4;
-    --primary-blue-dark: #4F6CA8;
-    --primary-blue-light: #94ACDC;
-    --accent: #4DA3E0;
-    --accent-dark: #2A8BD4;
-    --accent-light: #7CC0EC;
-    --primary-gradient: linear-gradient(135deg, #4F6CA8 0%, #6E8BC4 100%);
-    --highlight-gradient: linear-gradient(135deg, #7CC0EC 0%, #4DA3E0 50%, #BDE0F7 100%);
+    /* Brighter Myongji blue for dark backgrounds — 가독성 우선 */
+    --primary-blue: #8FACE6;
+    --primary-blue-dark: #6480C0;
+    --primary-blue-light: #B2C6EE;
+    --accent: #5FB0EC;
+    --accent-dark: #3A95DC;
+    --accent-light: #92CCF2;
+    --primary-gradient: linear-gradient(135deg, #6480C0 0%, #8FACE6 100%);
+    --highlight-gradient: linear-gradient(135deg, #92CCF2 0%, #5FB0EC 50%, #CDE6FA 100%);
 }
 
 [data-theme="dark"] .hero,
@@ -43,14 +43,14 @@
 }
 
 [data-theme="dark"][data-color="mju"] {
-    --primary-blue: #6E8BC4;
-    --primary-blue-dark: #4F6CA8;
-    --primary-blue-light: #94ACDC;
-    --accent: #4DA3E0;
-    --accent-dark: #2A8BD4;
-    --accent-light: #7CC0EC;
-    --primary-gradient: linear-gradient(135deg, #4F6CA8 0%, #6E8BC4 100%);
-    --highlight-gradient: linear-gradient(135deg, #7CC0EC 0%, #4DA3E0 50%, #BDE0F7 100%);
+    --primary-blue: #8FACE6;
+    --primary-blue-dark: #6480C0;
+    --primary-blue-light: #B2C6EE;
+    --accent: #5FB0EC;
+    --accent-dark: #3A95DC;
+    --accent-light: #92CCF2;
+    --primary-gradient: linear-gradient(135deg, #6480C0 0%, #8FACE6 100%);
+    --highlight-gradient: linear-gradient(135deg, #92CCF2 0%, #5FB0EC 50%, #CDE6FA 100%);
 }
 
 [data-theme="dark"][data-color="vibe"] {
@@ -65,7 +65,7 @@
 }
 
 [data-theme="dark"] .particle {
-    background: rgba(200, 160, 74, 0.22);
+    background: rgba(95, 176, 236, 0.22);
 }
 
 [data-theme="dark"] .carousel-arrow {
@@ -1265,4 +1265,32 @@
   background: var(--primary-blue);
   border-color: var(--primary-blue);
   color: #fff;
+}
+
+/* ── 다크모드 가독성 보정 ──
+   인라인 스타일로 들어가는 과정 컬러(브랜드 네이비 #1A2A5E 등)가
+   어두운 배경에서 묻히므로, 텍스트는 밝은 블루로, 컬러 칩은 밝기 보정 */
+[data-theme="dark"] .session-period { color: var(--primary-blue-light) !important; }
+[data-theme="dark"] .course-sidebar-title i { color: var(--primary-blue-light) !important; }
+[data-theme="dark"] .category-icon,
+[data-theme="dark"] .program-hero-icon,
+[data-theme="dark"] .curriculum-day-badge {
+    filter: brightness(1.5) saturate(1.15);
+}
+/* 카드/섹션 표면을 본문 배경과 분리해 가독성 확보 */
+[data-theme="dark"] .course-category-card,
+[data-theme="dark"] .overview-card,
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .session-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .about-card,
+[data-theme="dark"] .hero-ed-card {
+    background: var(--bg-light-gray);
+    border-color: var(--border-light);
+}
+/* 마퀴/eyebrow 등 보조 텍스트 대비 */
+[data-theme="dark"] .marquee { color: var(--text-light); }
+[data-theme="dark"] .category-tag {
+    background: rgba(143, 172, 230, 0.14);
+    color: var(--primary-blue-light);
 }

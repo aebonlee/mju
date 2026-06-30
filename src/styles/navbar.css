@@ -55,6 +55,10 @@
     width: auto;
     display: block;
 }
+/* 라이트=네이비 투명 로고, 다크=흰색 녹아웃 로고 전환 */
+.nav-logo-dark { display: none; }
+[data-theme="dark"] .nav-logo-light { display: none; }
+[data-theme="dark"] .nav-logo-dark { display: block; }
 .nav-logo-divider {
     width: 1px;
     height: 26px;
@@ -67,12 +71,6 @@
     color: var(--primary-blue);
     letter-spacing: -0.3px;
     white-space: nowrap;
-}
-/* 다크모드: 네이비 로고가 묻히지 않도록 밝게 처리 */
-[data-theme="dark"] .nav-logo-img {
-    background: #fff;
-    border-radius: 6px;
-    padding: 3px 6px;
 }
 [data-theme="dark"] .nav-logo-tag { color: var(--primary-blue-light); }
 @media (max-width: 600px) {

@@ -11,9 +11,7 @@ const Footer = (): ReactElement => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <div className="footer-logo-chip">
-              <img src="/images/logo/logo-horizontal.jpg" alt="명지대학교 MYONGJI UNIVERSITY" />
-            </div>
+            <img className="footer-logo" src="/images/logo/logo-horizontal-white.png" alt="명지대학교 MYONGJI UNIVERSITY" />
             <h3>
               {site.brand.parts.map((part, i) => (
                 <span key={i} className={part.className}>

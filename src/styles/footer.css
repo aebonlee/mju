@@ -155,17 +155,10 @@
     line-height: 1.7;
 }
 
-/* ── 명지대학교 공식 로고 (푸터) ── */
-.footer-logo-chip {
-    display: inline-flex;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 10px 16px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-}
-.footer-logo-chip img {
-    height: 34px;
+/* ── 명지대학교 공식 로고 (푸터, 흰색 녹아웃) ── */
+.footer-logo {
+    height: 38px;
     width: auto;
     display: block;
+    margin-bottom: 16px;
 }
