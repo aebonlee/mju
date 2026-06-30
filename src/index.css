@@ -12,7 +12,6 @@
 @import './styles/search.css';
 @import './styles/toast.css';
 @import './styles/community.css';
-@import './styles/dark-mode.css';
 @import './styles/responsive.css';
 @import './styles/ai-tools.css';
 @import './styles/dashboard.css';
@@ -22,3 +21,5 @@
 @import './styles/practice.css';
 @import './styles/site.css';
 @import './styles/programs.css';
+/* dark-mode 는 맨 마지막에 로드 — alias 변수/카드 배경 오버라이드가 항상 우선 */
+@import './styles/dark-mode.css';
