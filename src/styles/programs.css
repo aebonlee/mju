@@ -1,0 +1,1011 @@
+/* ============================================
+   명지대학교 — 연수과정/커리큘럼
+   ============================================ */
+
+/* ── Hero (Editorial) ── */
+.hero-ed {
+  position: relative;
+  background: var(--bg-light-gray);
+  /* 고정 네비게이션(--nav-height) 높이만큼 상단 여백 확보 */
+  padding: calc(var(--nav-height) + 48px) 0 64px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-light);
+}
+.hero-ed-bg {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle at center, var(--accent-soft), transparent 70%);
+  pointer-events: none;
+}
+.hero-ed-bg::after {
+  content: '';
+  position: absolute;
+  left: -340px;
+  bottom: -360px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, var(--primary-light), transparent 72%);
+}
+.hero-ed-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 52px;
+  align-items: center;
+}
+.hero-ed-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 22px;
+}
+.hero-ed-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  flex: 0 0 auto;
+}
+.hero-ed-title {
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 4.6vw, 60px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--primary-blue);
+  margin-bottom: 22px;
+}
+.hero-ed-title .accent {
+  color: var(--accent-dark);
+}
+.hero-ed-lead {
+  font-size: 16.5px;
+  line-height: 1.78;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin-bottom: 30px;
+}
+.hero-ed-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Hero side panel (dark navy) */
+.hero-ed-side {
+  background: var(--hero-bg);
+  color: #fff;
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.hero-ed-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+  margin-bottom: 26px;
+}
+.hero-metric {
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 18px 16px;
+}
+.hero-metric-num {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 7px;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.hero-metric-num.accent { color: var(--accent-light); }
+.hero-metric-num .small { font-size: 19px; color: var(--accent-light); margin-left: 2px; }
+.hero-metric-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+}
+.hero-ed-card-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-light);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.hero-ed-card-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #fff;
+}
+.hero-ed-card-list {
+  list-style: none;
+  display: grid;
+  gap: 11px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+.hero-ed-card-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.92);
+}
+.hero-ed-card-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.hero-card-name { font-weight: 600; }
+.hero-card-dur {
+  margin-left: auto;
+  font-size: 11.5px;
+  color: var(--accent-light);
+  white-space: nowrap;
+}
+
+/* ── Marquee ── */
+.marquee {
+  background: var(--bg-medium-gray);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+  padding: 13px 0;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+  white-space: nowrap;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: 0.04em;
+}
+.marquee-group { display: inline-flex; align-items: center; }
+.marquee-group > span { display: inline-flex; align-items: center; padding: 0 4px; }
+.marquee-track .dot { color: var(--accent-dark); margin: 0 16px; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+@media (max-width: 920px) {
+  .hero-ed-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero-ed-bg { display: none; }
+}
+@media (max-width: 520px) {
+  .hero-ed-actions .btn { width: 100%; justify-content: center; }
+  .hero-metric-num { font-size: 30px; }
+}
+
+
+/* ── Home: 과정 카드 보강 ── */
+.category-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+}
+.category-tagline {
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 8px !important;
+}
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 18px;
+}
+.category-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-medium-gray);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ── 교육과정 카탈로그 (4개 프로그램) ── */
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 12px;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+
+.program-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 0;
+  border-top: 4px solid var(--primary-blue);
+}
+.program-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 24px;
+}
+.program-order {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--border-medium);
+  line-height: 1;
+}
+
+.program-card-body {
+  flex: 1;
+  padding: 18px 28px 24px;
+}
+.program-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+.program-card-body h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+.program-tagline {
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+.program-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.program-audience {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 10px 14px;
+  background: var(--bg-light-gray);
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+.program-audience i { color: var(--accent-dark); }
+
+.program-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.program-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary-blue);
+  background: var(--primary-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+.program-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.program-meta i { margin-right: 5px; color: var(--accent-dark); }
+
+.program-card-footer {
+  padding: 0 28px 26px;
+}
+
+/* ── 과정 상세 헤더 ── */
+.program-hero {
+  background: var(--bg-light-gray);
+  /* 고정 네비게이션 높이만큼 상단 여백 확보 */
+  padding: calc(var(--nav-height) + 36px) 0 40px;
+}
+.program-hero-inner {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+.program-hero-icon {
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-lg);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 36px;
+  box-shadow: var(--shadow-md);
+}
+.program-hero-text h1 { font-size: 34px; margin-bottom: 8px; }
+.program-hero-tagline {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+.program-hero-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 760px;
+  margin-bottom: 18px;
+}
+.program-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.program-hero-meta i { margin-right: 6px; color: var(--accent-dark); }
+
+.program-platform-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+.program-platform-note i { color: var(--accent-dark); font-size: 18px; }
+
+/* ── 커리큘럼 타임라인 ── */
+.curriculum-day { margin-bottom: 56px; }
+.curriculum-day-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-light);
+}
+.curriculum-day-badge {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #fff;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.04em;
+}
+.curriculum-day-title { font-size: 24px; margin: 0; }
+.curriculum-day-sub { font-size: 13px; color: var(--text-light); font-weight: 600; }
+
+.curriculum-sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.session-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  transition: var(--transition-base);
+}
+.session-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-medium);
+}
+.session-time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px solid var(--border-light);
+  padding-right: 20px;
+}
+.session-period { font-family: var(--font-heading); font-size: 20px; font-weight: 700; }
+.session-clock { font-size: 13px; color: var(--text-light); font-weight: 500; }
+
+.session-title { font-size: 19px; margin-bottom: 10px; }
+.session-goal {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+.session-goal i { color: var(--accent-dark); margin-right: 6px; }
+
+.session-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.session-topic {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-light-gray);
+  border: 1px solid var(--border-light);
+  padding: 4px 11px;
+  border-radius: var(--radius-full);
+}
+
+/* 실습 사례 */
+.session-practices {
+  background: var(--bg-light-gray);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+}
+.session-practices-head {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+.session-practices-head i { color: var(--accent-dark); margin-right: 6px; }
+
+.practice-item { margin-bottom: 16px; }
+.practice-item:last-child { margin-bottom: 0; }
+.practice-scenario {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.practice-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.practice-prompt {
+  margin: 0;
+  background: #14233E;
+  color: #E8EEF8;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent);
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+}
+.practice-prompt code {
+  font-family: 'D2Coding', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background: none;
+  color: inherit;
+  white-space: pre-wrap;
+}
+
+/* CTA */
+.program-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* ── Overview band (교육 특징) ── */
+.overview-band {
+  background: var(--hero-bg);
+  color: #fff;
+  padding: 92px 0;
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 64px;
+  align-items: start;
+}
+.overview-eyebrow {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--accent-light);
+  margin-bottom: 16px;
+}
+.overview-eyebrow.accent-eyebrow { color: var(--accent-dark); }
+.overview-intro h2 {
+  font-size: 34px;
+  line-height: 1.32;
+  color: #fff;
+  white-space: pre-line;
+}
+.overview-intro p {
+  font-size: 15.5px;
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 22px;
+  max-width: 420px;
+}
+.overview-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.overview-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  transition: var(--transition-base);
+}
+.overview-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+.overview-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.overview-no {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--accent-light);
+}
+.overview-card-top i { font-size: 22px; color: var(--accent-light); }
+.overview-card h3 { font-size: 18px; color: #fff; margin-bottom: 8px; }
+.overview-card p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ── 준비사항 ── */
+.prep-wrap {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-xl);
+  padding: 46px 50px;
+}
+.prep-head { margin-bottom: 28px; }
+.prep-head h2 { font-size: 30px; margin-bottom: 12px; }
+.prep-head p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 700px;
+}
+.prep-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.prep-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+}
+.prep-no {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+}
+.prep-title { font-size: 15.5px; font-weight: 600; color: var(--text-primary); }
+.prep-desc { font-size: 14px; color: var(--text-secondary); margin-top: 5px; line-height: 1.6; }
+
+/* ── 교육 안내 (info) ── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 30px 32px;
+}
+.info-kicker {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--accent-dark);
+  margin-bottom: 14px;
+}
+.info-row { padding: 13px 0; border-top: 1px solid var(--border-light); }
+.info-k { font-size: 13px; color: var(--text-light); font-weight: 500; }
+.info-v { font-size: 15.5px; color: var(--text-primary); font-weight: 600; margin-top: 4px; line-height: 1.5; }
+.info-cta { text-align: center; margin-top: 48px; }
+
+/* ── 반응형 ── */
+@media (max-width: 900px) {
+  .program-grid { grid-template-columns: 1fr; }
+  .overview-grid { grid-template-columns: 1fr; gap: 36px; }
+  .info-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .overview-cards { grid-template-columns: 1fr; }
+  .prep-grid { grid-template-columns: 1fr; }
+  .prep-wrap { padding: 32px 24px; }
+}
+@media (max-width: 680px) {
+  .program-hero-inner { flex-direction: column; gap: 18px; }
+  .program-hero-text h1 { font-size: 27px; }
+  .session-card { grid-template-columns: 1fr; gap: 14px; }
+  .session-time {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-right: 0;
+    padding-bottom: 12px;
+  }
+}
+
+/* ── 과정 상세: 좌측 사이드바 레이아웃 ── */
+.course-layout {
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.course-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 20px);
+}
+.course-sidebar-inner {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+.course-sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-primary);
+  line-height: 1.35;
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid var(--primary-blue);
+}
+.course-sidebar-title i { font-size: 18px; flex-shrink: 0; }
+.course-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border-light);
+}
+.course-sidebar-nav:first-of-type { border-top: none; }
+.course-sidebar-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 4px 10px 8px;
+}
+.course-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-base);
+  width: 100%;
+}
+.course-sidebar-link i { width: 16px; text-align: center; color: var(--text-light); }
+.course-sidebar-link:hover {
+  background: var(--bg-light-gray);
+  color: var(--primary-blue);
+}
+.course-sidebar-link:hover i { color: var(--accent-dark); }
+.course-sidebar-link.active {
+  background: var(--primary-light);
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+.course-sidebar-link.active i { color: var(--primary-blue); }
+.course-sidebar-link.sub { font-size: 13px; color: var(--text-light); }
+.course-content { min-width: 0; }
+
+@media (max-width: 900px) {
+  .course-layout { grid-template-columns: 1fr; gap: 20px; }
+  .course-sidebar { position: static; }
+  .course-sidebar-inner { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .course-sidebar-title { width: 100%; }
+  .course-sidebar-nav { border-top: none; padding: 4px 0; }
+}
+
+/* 과정 사이드바: 학습자료 드롭다운 */
+.course-sidebar-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+.course-sidebar-chevron {
+  margin-left: auto;
+  font-size: 11px;
+  transition: transform 0.2s ease;
+  color: var(--text-light) !important;
+}
+.course-sidebar-toggle.open .course-sidebar-chevron { transform: rotate(180deg); }
+.course-sidebar-sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 2px 0 4px 10px;
+  padding-left: 8px;
+}
+.course-sidebar-sublist .course-sidebar-link.sub {
+  padding: 7px 8px;
+  font-size: 12.5px;
+  border-radius: 0;
+}
+.course-sidebar-sublist .course-sidebar-link.sub:hover {
+  background: transparent;
+  color: var(--primary-blue);
+}
+.course-sidebar-sublist .course-sidebar-link.sub.active {
+  background: transparent;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+.course-sidebar-link.sub.more {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+.course-sidebar-link.sub.more i { color: var(--accent-dark); }
+
+/* 과정 페이지 내 학습자료 인라인 표시 */
+.material-inline {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  box-shadow: var(--shadow-sm);
+}
+.material-inline-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0;
+  margin-bottom: 18px;
+}
+.material-inline-back:hover { color: var(--primary-blue); }
+.material-inline-eyebrow {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.material-inline-eyebrow i { margin-right: 6px; }
+.material-inline-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+/* 프롬프트 실습 좌측 메뉴 (학습/실습/평가 드롭다운) */
+.pe-nav {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-light);
+}
+.pe-nav-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 4px 2px;
+}
+.pe-nav-toggle i:first-child { color: var(--primary-blue); }
+.pe-nav-chevron {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-light);
+  transition: transform 0.2s ease;
+}
+.pe-nav-toggle.open .pe-nav-chevron { transform: rotate(180deg); }
+.pe-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+}
+.pe-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+.pe-nav-link i { width: 16px; text-align: center; color: var(--text-light); }
+.pe-nav-link:hover { background: var(--bg-light-gray); color: var(--primary-blue); }
+.pe-nav-link.active { background: var(--primary-light); color: var(--primary-blue); font-weight: 600; }
+.pe-nav-link.active i { color: var(--primary-blue); }
+
+/* ── 실습 · 따라하기 (hands-on labs) ── */
+.handson-head { margin-bottom: 24px; }
+.handson-intro {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-top: 6px;
+}
+.lab-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.lab-card-head {
+  border-left: 3px solid var(--primary-blue);
+  padding-left: 14px;
+  margin-bottom: 18px;
+}
+.lab-title { font-size: 20px; margin-bottom: 8px; }
+.lab-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.lab-meta i { margin-right: 5px; color: var(--accent-dark); }
+.lab-scenario { font-size: 14.5px; color: var(--text-secondary); line-height: 1.65; }
+
+.lab-steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.lab-step { display: flex; gap: 14px; }
+.lab-step-num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+.lab-step-body { min-width: 0; flex: 1; }
+.lab-step-title { font-size: 15.5px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.lab-step-detail { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+.lab-step-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--accent-dark);
+  font-weight: 600;
+  margin-top: 8px;
+}
+.lab-result {
+  margin-top: 18px;
+  padding: 12px 16px;
+  background: var(--accent-soft);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.lab-result i { color: var(--accent-dark); margin-right: 7px; }

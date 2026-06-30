@@ -1,0 +1,493 @@
+/* ============================================
+   명지대학교 교수자 AI 역량 강화 온라인 연수
+   Design — Myongji (Dark Blue + Blue)
+   Myongji Dark Blue : Pantone 2768 C ≈ #1A2A5E
+   Myongji Blue      : Pantone 300 C  ≈ #0072CE
+   기본 컬러셋: mju. 후보군: academic / research / vibe
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ── Myongji (기본): Dark Blue primary + Blue accent ── */
+    --primary-blue: #1A2A5E;
+    --primary-blue-dark: #101B40;
+    --primary-blue-light: #324488;
+    --accent: #0072CE;
+    --accent-dark: #005AA3;
+    --accent-light: #3D9BE0;
+
+    /* Backgrounds — cool blue-tinted */
+    --bg-white: #FFFFFF;
+    --bg-light-gray: #F5F8FC;
+    --bg-medium-gray: #E8EFF8;
+    --text-primary: #14203A;
+    --text-secondary: #4B5563;
+    --text-light: #6B7280;
+    --text-white: #FFFFFF;
+    --border-light: #DEE7F2;
+    --border-medium: #C5D4E8;
+    --shadow-sm: 0 1px 3px rgba(26, 42, 94, 0.06);
+    --shadow-md: 0 4px 6px rgba(26, 42, 94, 0.07), 0 2px 4px rgba(26, 42, 94, 0.04);
+    --shadow-lg: 0 10px 25px rgba(26, 42, 94, 0.09), 0 4px 10px rgba(26, 42, 94, 0.05);
+    --shadow-xl: 0 20px 40px rgba(26, 42, 94, 0.12), 0 8px 16px rgba(26, 42, 94, 0.07);
+    --nav-height: 80px;
+    --section-padding: 80px;
+    --container-max: 1480px;
+
+    /* Heading font — serif for academic gravitas */
+    --font-heading: 'Noto Serif KR', 'Noto Sans KR', serif;
+    --font-body: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Gradient */
+    --primary-gradient: linear-gradient(135deg, #1A2A5E 0%, #324488 100%);
+    --accent-gradient: linear-gradient(135deg, #005AA3 0%, #0072CE 50%, #3D9BE0 100%);
+
+    /* Hero / CTA / Page-header shared background */
+    --hero-bg: linear-gradient(135deg, #1A2A5E 0%, #101B40 55%, #0E3A6B 100%);
+    --hero-bg-dark: linear-gradient(135deg, #131F45 0%, #0C1530 55%, #0A2A50 100%);
+    --highlight-gradient: linear-gradient(135deg, #3D9BE0 0%, #0072CE 50%, #BDE0F7 100%);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-blur: 12px;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+
+    /* Transition */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Color Set Overrides ── */
+/* academic 이 기본값(루트) — 별도 override 불필요 */
+
+/* 리서치 (Deep Navy + Teal) */
+html[data-color="research"] {
+    --primary-blue: #0F2A4A;
+    --primary-blue-dark: #0A1E36;
+    --primary-blue-light: #2C4E76;
+    --accent: #14B8A6;
+    --accent-dark: #0E8C7E;
+    --accent-light: #5EEAD4;
+    --bg-light-gray: #F8FAFC;
+    --bg-medium-gray: #EAF0F5;
+    --border-light: #E2E8F0;
+    --border-medium: #CBD5E1;
+    --primary-gradient: linear-gradient(135deg, #0F2A4A 0%, #2C4E76 100%);
+    --accent-gradient: linear-gradient(135deg, #0E8C7E 0%, #14B8A6 50%, #5EEAD4 100%);
+    --hero-bg: linear-gradient(135deg, #0F2A4A 0%, #0A1E36 55%, #103A4A 100%);
+    --hero-bg-dark: linear-gradient(135deg, #0B1E33 0%, #08182A 55%, #0C2A38 100%);
+    --highlight-gradient: linear-gradient(135deg, #5EEAD4 0%, #14B8A6 50%, #CFFAF2 100%);
+}
+
+/* 명지대 (Myongji Dark Blue + Blue) — 기본값과 동일 */
+html[data-color="mju"] {
+    --primary-blue: #1A2A5E;
+    --primary-blue-dark: #101B40;
+    --primary-blue-light: #324488;
+    --accent: #0072CE;
+    --accent-dark: #005AA3;
+    --accent-light: #3D9BE0;
+    --bg-light-gray: #F5F8FC;
+    --bg-medium-gray: #E8EFF8;
+    --border-light: #DEE7F2;
+    --border-medium: #C5D4E8;
+    --primary-gradient: linear-gradient(135deg, #1A2A5E 0%, #324488 100%);
+    --accent-gradient: linear-gradient(135deg, #005AA3 0%, #0072CE 50%, #3D9BE0 100%);
+    --hero-bg: linear-gradient(135deg, #1A2A5E 0%, #101B40 55%, #0E3A6B 100%);
+    --hero-bg-dark: linear-gradient(135deg, #131F45 0%, #0C1530 55%, #0A2A50 100%);
+    --highlight-gradient: linear-gradient(135deg, #3D9BE0 0%, #0072CE 50%, #BDE0F7 100%);
+}
+
+/* 모던 바이올렛 (Violet + Blue) */
+html[data-color="vibe"] {
+    --primary-blue: #6D28D9;
+    --primary-blue-dark: #4C1D95;
+    --primary-blue-light: #9D5CF0;
+    --accent: #2563EB;
+    --accent-dark: #1D4ED8;
+    --accent-light: #60A5FA;
+    --bg-light-gray: #F8F7FE;
+    --bg-medium-gray: #EEEBFB;
+    --border-light: #E7E3F7;
+    --border-medium: #D3CCEF;
+    --primary-gradient: linear-gradient(135deg, #6D28D9 0%, #9D5CF0 100%);
+    --accent-gradient: linear-gradient(135deg, #4C1D95 0%, #6D28D9 50%, #2563EB 100%);
+    --hero-bg: linear-gradient(135deg, #6D28D9 0%, #4C1D95 55%, #2563EB 100%);
+    --hero-bg-dark: linear-gradient(135deg, #3C1A6E 0%, #2C1255 55%, #18316E 100%);
+    --highlight-gradient: linear-gradient(135deg, #C4B5FD 0%, #A78BFA 50%, #DBEAFE 100%);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 17px;
+}
+
+#root,
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.App > main {
+    flex: 1;
+}
+
+body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    background: var(--bg-white);
+    overflow-x: hidden;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+h1 { line-height: 1.3; }
+h2 { line-height: 1.35; }
+h3 { line-height: 1.4; letter-spacing: -0.015em; }
+h4 { line-height: 1.45; letter-spacing: -0.01em; }
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--text-white);
+    border-color: var(--primary-blue);
+}
+
+.btn-primary:hover {
+    background: var(--primary-blue-dark);
+    border-color: var(--primary-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 70, 200, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-blue);
+    color: var(--text-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 70, 200, 0.3);
+}
+
+/* Gold accent button (academic signature) */
+.btn-accent {
+    background: var(--accent);
+    color: #1B2230;
+    border-color: var(--accent);
+    font-weight: 700;
+}
+
+.btn-accent:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(200, 160, 74, 0.35);
+}
+
+/* Accent text + small flourishes */
+.text-accent { color: var(--accent); }
+.accent-bar {
+    display: inline-block;
+    width: 48px;
+    height: 4px;
+    border-radius: var(--radius-full);
+    background: var(--accent-gradient);
+}
+
+.btn-primary-large {
+    background: var(--bg-white);
+    color: var(--primary-blue);
+    border-color: var(--bg-white);
+    padding: 16px 40px;
+    font-size: 18px;
+}
+
+.btn-primary-large:hover {
+    background: var(--bg-light-gray);
+    border-color: var(--bg-light-gray);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border-light);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+    color: var(--primary-blue-dark);
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 72px;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+/* Page Header (inner pages — gradient banner) */
+/* navbar가 fixed이므로 padding-top에 --nav-height를 포함 */
+.page-header {
+    background: var(--hero-bg);
+    padding: calc(var(--nav-height) + 60px) 0 60px;
+    text-align: center;
+    color: var(--text-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.page-header p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.page-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.page-description {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Chip */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-light);
+    background: var(--bg-white);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+.chip:hover, .chip.active {
+    background: var(--primary-blue);
+    color: var(--text-white);
+    border-color: var(--primary-blue);
+}
+
+/* Forms */
+.form-group { margin-bottom: 20px; }
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 70, 200, 0.1);
+}
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Loading Page */
+.loading-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-light);
+    border-top-color: var(--primary-blue);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 404 Not Found */
+.not-found-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+.not-found-content { max-width: 480px; }
+.not-found-code {
+  font-size: 120px;
+  font-weight: 900;
+  color: var(--primary-blue);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.not-found-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+.not-found-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+.not-found-actions { display: flex; gap: 12px; justify-content: center; }
+.not-found-btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.not-found-btn.primary {
+  background: var(--primary-blue);
+  color: #fff;
+}
+.not-found-btn.primary:hover { background: var(--primary-blue-dark); }
+.not-found-btn.secondary {
+  background: var(--bg-light-gray);
+  color: var(--text-secondary);
+}
+.not-found-btn.secondary:hover { background: var(--bg-medium-gray); }
